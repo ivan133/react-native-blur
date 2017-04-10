@@ -14,6 +14,8 @@ public class BlurViewManager extends SimpleViewManager<BlurringView> {
 
     public static final int defaultRadius = 10;
     public static final int defaultSampling = 10;
+    @ColorInt
+    public static final int defaultOverlayColor = -1727262190;
 
     private static Activity currentActivity;
 
@@ -37,7 +39,7 @@ public class BlurViewManager extends SimpleViewManager<BlurringView> {
         view.setBlurRadius(radius);
     }
 
-    @ReactProp(name = "overlayColor", customType = "Color")
+    @ReactProp(name = "overlayColor", customType = "Color", defaultInt = defaultOverlayColor)
     public void setColor(BlurringView view, int color) {
         view.setOverlayColor(color);
     }
